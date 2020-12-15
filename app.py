@@ -31,5 +31,6 @@ def weather_handler(message):
         except Exception as err:
             bot.send_message(message.chat.id, err)
 
-
+print('Bot has been started successfully')
 bot.polling()
+
