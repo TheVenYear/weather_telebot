@@ -15,12 +15,13 @@ class OpenWeather:
             raise Exception(f"Город с названием {city_name} не существует")
 
         description = data['weather'][0]['description']
-        temp = data['main']['temp'] - 273.15
-        feels_like = data['main']['feels_like'] - 273.15
+        temp = round(data['main']['temp'] - 273.15)
+        feels_like = round(data['main']['feels_like'] - 273.15)
 
         return {
             'description': description,
             'temp': temp,
-            'feels_like': feels_like
+            'feels_like': feels_like,
+            'name': data['name']
         }
 
